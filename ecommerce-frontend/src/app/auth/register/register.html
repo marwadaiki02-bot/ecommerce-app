@@ -1,1 +1,22 @@
-<p>register works!</p>
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
+  <div class="bg-white/30 backdrop-blur-md p-8 rounded-xl shadow-lg w-96">
+    <h2 class="text-2xl font-bold text-center mb-6">Créer un compte</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <input formControlName="email" type="email" placeholder="Email"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"/>
+      <input formControlName="password" type="password" placeholder="Mot de passe"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"/>
+      <select formControlName="role"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+        <option value="client">Client</option>
+        <option value="vendor">Fournisseur</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit"
+        class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">S'inscrire</button>
+    </form>
+    <p class="text-center mt-4 text-sm">
+      Déjà inscrit ? <a routerLink="/login" class="text-blue-600 hover:underline">Se connecter</a>
+    </p>
+  </div>
+</div>
